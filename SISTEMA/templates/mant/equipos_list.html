@@ -1,0 +1,35 @@
+{%extends 'base/base.html'%}
+{%block content%}
+<table>
+	<thead>
+		<tr>
+			<td>CODIGO DE EQUIPO</td>
+			<td>NUMERO DE FALLOS</td>
+			<td>TIEMPO DE REPARACION</td>
+			<td>TIEMPO TOTAL</td>
+			<td>DISPONIBILIDAD</td>
+			<td>FIABILIDAD</td>
+			<td>MANTENIBILIDAD</td>
+		</tr>
+	</thead>
+	<tbody>
+		
+			{%if equipos%}
+			{%for equipo in equipos%}
+			<tr>
+			<td>{{equipo.codigo}}</td>
+			<td>{{equipo.numero}}</td>
+			<td>{{equipo.TIEMPO_FALLO}}</td>
+			<td>{{equipo.TIEMPO_TOTAL}}</td>
+			<td>{{equipo.DISPONIBILIDAD}} %</td>
+			<td>{{equipo.FIABILIDAD}} H  </td>
+			<td>{{equipo.MANTENIBILIDAD}} H</td>
+			</tr>
+			{%endfor%}
+			{%else%}
+			<h1>NO HAY REGISTROS</h1>
+			{%endif%}
+		
+	</tbody>
+</table>
+{%endblock%}
